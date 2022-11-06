@@ -22,7 +22,7 @@ function DiscordMsg(Duvod, _source)
             ["title"] = "🛡️💖   [ID: **" .. _source .. "**] | " .. GetPlayerName(_source) .. "   🛡️💖",
             ["description"] = "🛡️💖   " .. Duvod .. "   🛡️💖",
             ["footer"] = {
-                ["text"] = "FTL AC"
+                ["text"] = "EVRP.CZ"
             }
         }
     }
@@ -33,7 +33,7 @@ function DiscordMsg(Duvod, _source)
         "POST",
         json.encode(
             {
-                username = "FTL AC",
+                username = "EVRP.CZ",
                 embeds = connect,
                 avatar_url = "https://cdn.discordapp.com/attachments/542373462921183262/796849635788062750/Unknown.png"
             }
@@ -49,7 +49,7 @@ AddEventHandler("LICENSE:Check", function(ip, resName)
         {
             ["color"] = 7419530,
             ["title"] = "\nResource: "..resName.." started on ip: "..ip,
-            ["description"] = "License: "..ftl.license,
+            ["description"] = "License: "..unkw.license,
             ["footer"] = {
                 ["text"] = "funi_filesecure v1.0"
             },
@@ -110,9 +110,9 @@ AddEventHandler(
         deferrals.defer()
         Citizen.Wait(500)
         if steamID2 == "n/a" then
-            deferrals.done("\n🛡️💖|FTL AC| Tvůj steam není zapnutý🛡️💖 \n🛡️💖https://discord.gg/discord🛡️💖\n\n [ERROR: STEAM_NOT_RUNNING]")
+            deferrals.done("\n🛡️💖|EVRP.CZ| Tvůj steam není zapnutý🛡️💖 \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: STEAM_NOT_RUNNING]")
         end
-        deferrals.update(string.format("\n🛡️💖|FTL AC| Ověřuje se tvoje HWID..."))
+        deferrals.update(string.format("\n🛡️💖|EVRP.CZ| Ověřuje se tvoje HWID..."))
         Citizen.Wait(500)
         MySQL.Async.fetchAll(
             "SELECT * FROM `unknownbans` WHERE `token` = @token",
@@ -128,17 +128,17 @@ AddEventHandler(
                 end
                 for name in pairs(blacklistednames) do
                     if(string.gsub(string.gsub(string.gsub(string.gsub(jmeno:lower(), "-", ""), ",", ""), "%.", ""), " ", ""):find(blacklistednames[name])) then
-                        deferrals.done( "🛡️💖|FTL AC| Toto jméno je zakázané! 🛡️💖" )
+                        deferrals.done( "🛡️💖|EVRP.CZ| Toto jméno je zakázané! 🛡️💖" )
                         CancelEvent()
                         break
                     end
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖 | FTL AC | HWID bylo zabanováno🛡️💖 \n 🛡️💖 | Pro odvolání přijď na náš discord. | 🛡️💖 \n🛡️💖| https://discord.gg/discord |🛡️💖\n\n [ERROR: HWID_TOKEN_18_BANNED]"
+                        "\n🛡️💖 | EVRP.CZ | HWID bylo zabanováno🛡️💖 \n 🛡️💖 | Pro odvolání přijď na náš discord. | 🛡️💖 \n🛡️💖| https://discord.gg/nGgNKXqD9w |🛡️💖\n\n [ERROR: HWID_TOKEN_18_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje...  🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje...  🛡️💖")
                     Citizen.Wait(1600)
                 end
             end
@@ -159,15 +159,15 @@ AddEventHandler(
                     end
                 end
                 if token2 == nil then 
-                    deferrals.done( "\n🛡️💖|FTL AC| Chyba při detekci HWID , prosím restartuj počítač 🛡️💖 \n 🛡️💖 Pokud tato chyba přetrvává, udělej si ticket u nás na discordu. 🛡️💖  \n🛡️💖 https://discord.gg/discord 🛡️💖\n\n [ERROR: HWID_TOKEN2_ERROR]"
+                    deferrals.done( "\n🛡️💖|EVRP.CZ| Chyba při detekci HWID , prosím restartuj počítač 🛡️💖 \n 🛡️💖 Pokud tato chyba přetrvává, udělej si ticket u nás na discordu. 🛡️💖  \n🛡️💖 https://discord.gg/nGgNKXqD9w 🛡️💖\n\n [ERROR: HWID_TOKEN2_ERROR]"
                 )
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖|FTL AC| Token byl zabanován🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/discord🛡️💖\n\n [ERROR: HWID_TOKEN_2_BANNED]"
+                        "\n🛡️💖|EVRP.CZ| Token byl zabanován🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_TOKEN_2_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje...  🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje...  🛡️💖")
                     Citizen.Wait(1600)
                 end
             end
@@ -189,10 +189,10 @@ AddEventHandler(
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖|FTL AC| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/discord🛡️💖\n\n [ERROR: HWID_TOKEN_3_BANNED]"
+                        "\n🛡️💖|EVRP.CZ| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_TOKEN_3_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje...  🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje...  🛡️💖")
                     Citizen.Wait(1600)
                 end
             end
@@ -214,10 +214,10 @@ AddEventHandler(
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖|FTL AC| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/discord🛡️💖\n\n [ERROR: HWID_TOKEN_4_BANNED]"
+                        "\n🛡️💖|EVRP.CZ| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_TOKEN_4_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje...  🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje...  🛡️💖")
                     Citizen.Wait(1600)
                 end
             end
@@ -238,10 +238,10 @@ AddEventHandler(
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖|FTL AC| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/discord🛡️💖\n\n [ERROR: HWID_TOKEN_5_BANNED]"
+                        "\n🛡️💖|EVRP.CZ| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_TOKEN_5_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje...  🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje...  🛡️💖")
                     Citizen.Wait(1600)
                 end
             end
@@ -263,10 +263,10 @@ AddEventHandler(
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖|FTL AC| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_TOKEN_6_BANNED]"
+                        "\n🛡️💖|EVRP.CZ| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_TOKEN_6_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje...  🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje...  🛡️💖")
                     Citizen.Wait(1600)
                 end
             end
@@ -286,10 +286,10 @@ AddEventHandler(
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖|FTL AC| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_TOKEN_7_BANNED]"
+                        "\n🛡️💖|EVRP.CZ| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_TOKEN_7_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje...  🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje...  🛡️💖")
                     Citizen.Wait(1600)
                 end
             end
@@ -311,10 +311,10 @@ AddEventHandler(
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖|FTL AC| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_ACCOUNT_TOKEN_01_BANNED]"
+                        "\n🛡️💖|EVRP.CZ| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_ACCOUNT_TOKEN_01_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje...  🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje...  🛡️💖")
                     Citizen.Wait(1600)
                 end
             end
@@ -335,10 +335,10 @@ AddEventHandler(
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖|FTL AC| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_ACCOUNT_TOKEN_02_BANNED]"
+                        "\n🛡️💖|EVRP.CZ| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_ACCOUNT_TOKEN_02_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje... 🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje... 🛡️💖")
                     Citizen.Wait(1600)
                 end
             end
@@ -358,12 +358,12 @@ AddEventHandler(
                 end
                 if found == true then
                     deferrals.done(
-                        "\n🛡️💖|FTL AC| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_ACCOUNT_TOKEN_03_BANNED]"
+                        "\n🛡️💖|EVRP.CZ| HWID bylo zabanováno🛡️💖 \n 🛡️💖Pro odvolání přijď na náš discord.🛡️💖  \n🛡️💖https://discord.gg/nGgNKXqD9w🛡️💖\n\n [ERROR: HWID_ACCOUNT_TOKEN_03_BANNED]"
                     )
                 else
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID se ověřuje... 🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID se ověřuje... 🛡️💖")
                     Citizen.Wait(1600)
-                    deferrals.update("\n🛡️💖|FTL AC| Tvoje HWID bylo oveřeno ! 🛡️💖")
+                    deferrals.update("\n🛡️💖|EVRP.CZ| Tvoje HWID bylo oveřeno ! 🛡️💖")
                     Citizen.Wait(2000)
                     deferrals.done()
                 end
@@ -392,7 +392,7 @@ RegisterCommand(
         local Token5 = GetPlayerToken(source, 0)
         local reason = table.concat(args, " ", 2)
         local SourceName = GetPlayerName(source)
-        if IsPlayerAceAllowed(source, "ftl.HWID.BAN.PERMISE") then
+        if IsPlayerAceAllowed(source, "UNKW.HWID.BAN.PERMISE") then
             DiscordMsg(SourceName .. " zabanoval " .. " " .. GetPlayerName(target) .. " z důvodu: " .. reason, target)
             MySQL.Async.execute(
                 "INSERT INTO unknownbans (name, steamid, token, ip, license, reason, token2, token3, token4, token5, token6, token7) VALUES(@name, @steamid, @token, @ip, @license, @reason, @token2, @token3, @token4, @token5, @token6, @token7)",
@@ -416,23 +416,23 @@ RegisterCommand(
                 -1,
                 {
                     args = {
-                        "🛡️💖^1[ ^7FTL AC^1] ^7HWID ^7hráče " .. GetPlayerName(target) .. " ^1 zabanované z důvodu",
+                        "🛡️💖^1[ ^7EVRP.CZ^1] ^7HWID ^7hráče " .. GetPlayerName(target) .. " ^1 zabanované z důvodu",
                         " ^7^1" .. reason .. "\n 🛡️💖 Odpovědný Administrátor: " .. SourceName .. " 🛡️💖"
                     }
                 }
             )
             DropPlayer(
                 target,
-                "\n🛡️💖|FTL AC| Zabanován z důvodu: " ..
+                "\n🛡️💖|EVRP.CZ| Zabanován z důvodu: " ..
                     reason .. "🛡️💖 \n\n 🛡️💖Odpovědný Administrátor: " .. SourceName .. " 🛡️💖"
             )
         end
     end
 )
 
-RegisterServerEvent("ftl_HWIDBAN")
+RegisterServerEvent("UNKW_HWIDBAN")
 AddEventHandler(
-    "ftl_HWIDBAN",
+    "UNKW_HWIDBAN",
     function(name, reason)
         local num
         GetNumPlayerTokens(name)
@@ -459,19 +459,19 @@ AddEventHandler(
             -1,
             {
                 args = {
-                    "🛡️💖^7[ ^6FTL AC^7] ^1HWID ^6hráče " .. GetPlayerName(name) .. " ^1 zabanované",
+                    "🛡️💖^7[ ^6EVRP.CZ^7] ^1HWID ^6hráče " .. GetPlayerName(name) .. " ^1 zabanované",
                     " ^7^1" .. reason .. " 🛡️💖\n "
                 }
             }
         )
-        TriggerClientEvent("ftl:printToClient", "za 1 bote")
-        DropPlayer(name, "\n\n🛡️💖|FTL AC| Detekován 🛡️💖\n\n 🛡️💖Důvod: " .. reason .. "🛡️💖")
+        TriggerClientEvent("UNKW:printToClient", "za 1 bote")
+        DropPlayer(name, "\n\n🛡️💖|EVRP.CZ| Detekován 🛡️💖\n\n 🛡️💖Důvod: " .. reason .. "🛡️💖")
     end
 )
 
-RegisterServerEvent("ftl_SOURCEBAN")
+RegisterServerEvent("UNKW_SOURCEBAN")
 AddEventHandler(
-    "ftl_SOURCEBAN",
+    "UNKW_SOURCEBAN",
     function(reason)
         local num
         GetNumPlayerTokens(source)
@@ -498,13 +498,13 @@ AddEventHandler(
             -1,
             {
                 args = {
-                    "🛡️💖^7[ ^6FTL AC^7] ^1HWID ^6hráče " .. GetPlayerName(source) .. " ^1 zabanované",
+                    "🛡️💖^7[ ^6EVRP.CZ^7] ^1HWID ^6hráče " .. GetPlayerName(source) .. " ^1 zabanované",
                     " ^7^1" .. reason .. "🛡️💖\n "
                 }
             } --
         )
         DiscordMsg(" Detekován z důvodu "..reason, source)
-        TriggerClientEvent("ftl:ZalagujZmrda")
+        TriggerClientEvent("UNKW:ZalagujZmrda")
     end
 )
 
@@ -534,13 +534,13 @@ function PepeWareBan(playersource, reason)
             -1,
             {
                 args = {
-                    "🛡️💖^7[ ^6FTL AC^7] ^1HWID ^6hráče " .. GetPlayerName(playersource) .. " ^1 zabanované",
+                    "🛡️💖^7[ ^6EVRP.CZ^7] ^1HWID ^6hráče " .. GetPlayerName(playersource) .. " ^1 zabanované",
                     " ^7^1" .. reason .. "🛡️💖\n "
                 }
             } --
         )
         DiscordMsg(" Detekován z důvodu "..reason, playersource)
-        TriggerClientEvent("ftl:ZalagujZmrda", playersource)
+        TriggerClientEvent("UNKW:ZalagujZmrda", playersource)
     end
 
 
@@ -548,17 +548,17 @@ function PepeWareBan(playersource, reason)
 
 --//ONESYNC FUNKCE\\--
 
-if ftl.AntiExplosionEvent == true then 
+if unkw.AntiExplosionEvent == true then 
     AddEventHandler('explosionEvent', function(sender, ev)
         local JmenoSendera = GetPlayerName(sender)
-        for _, v in ipairs(ftl.CheaterExploze) do
+        for _, v in ipairs(unkw.CheaterExploze) do
             if ev.explosionType == v then
                 CancelEvent()
                 DiscordMsg("Zakázaná exploze č. *"..v.."*", sender)
-                TriggerEvent("ftl_HWIDBAN", sender, "Zakázaná exploze č. "..v.."")
+                TriggerEvent("UNKW_HWIDBAN", sender, "Zakázaná exploze č. "..v.."")
             end
         end
-        for _, v in ipairs(ftl.PlayerExploze) do
+        for _, v in ipairs(unkw.PlayerExploze) do
             if ev.explosionType == v then
                 CancelEvent()
             end
@@ -568,7 +568,7 @@ if ftl.AntiExplosionEvent == true then
     if explosionCounter[sender] > 9 then
         CancelEvent()
         DiscordMsg("Spawn velkého počtu explozí", sender)
-        TriggerEvent("ftl_HWIDBAN", sender, "Spawn velkého počtu explozí")
+        TriggerEvent("UNKW_HWIDBAN", sender, "Spawn velkého počtu explozí")
     end
       if ev.ownerNetId == 0 then
             CancelEvent()
@@ -582,7 +582,7 @@ CONST_POPULATION_TYPE_MISSION = 7
 CONST_ENTITY_TYPE_OBJECT = 3
 CONST_ENTITY_TYPE_VEHICLE = 2
 CONST_ENTITY_TYPE_PED = 1
-if ftl.AntiEntityCreating == true then
+if unkw.AntiEntityCreating == true then
     AddEventHandler(
         "entityCreating",
         function(id)
@@ -593,7 +593,7 @@ if ftl.AntiEntityCreating == true then
             discordsent = false
 
             if eType == CONST_ENTITY_TYPE_OBJECT then --Objects
-                for i, v in pairs(ftl.objectWhitelist) do
+                for i, v in pairs(unkw.objectWhitelist) do
                     local v = (type(v) == "number" and v or GetHashKey(v))
                     if v == model then
                         return
@@ -612,7 +612,7 @@ if ftl.AntiEntityCreating == true then
                             end
 
             elseif eType == CONST_ENTITY_TYPE_VEHICLE then
-                for i, v in pairs(ftl.vehicleBlacklist) do
+                for i, v in pairs(unkw.vehicleBlacklist) do
                     local v = (type(v) == "number" and v or GetHashKey(v))
                     if v == model then
                         CancelEvent()
@@ -621,7 +621,7 @@ if ftl.AntiEntityCreating == true then
               vehCounter[owner] = (vehCounter[owner] or 0) + 1
                             if vehCounter[owner] > 60 then
                                 DiscordMsg("Pokus o mass spawn vozidel [Zabanován]", owner)
-                                TriggerEvent("ftl_HWIDBAN", owner, "Pokus o mass spawn vozidel")
+                                TriggerEvent("UNKW_HWIDBAN", owner, "Pokus o mass spawn vozidel")
                                 CancelEvent()
                             end
 
@@ -636,7 +636,7 @@ if ftl.AntiEntityCreating == true then
                     CancelEvent()
                 end
             elseif eType == CONST_ENTITY_TYPE_PED then
-                for i, v in pairs(ftl.pedBlacklist) do
+                for i, v in pairs(unkw.pedBlacklist) do
                     local v = (type(v) == "number" and v or GetHashKey(v))
                     if v == model then
                         CancelEvent()
@@ -646,7 +646,7 @@ if ftl.AntiEntityCreating == true then
                 PedCounter[owner] = (PedCounter[owner] or 0) + 1
                             if PedCounter[owner] > 45 then
                                 DiscordMsg("Pokus o mass spawn pedů [varovani]", owner)
---                             //  TriggerEvent("ftl_HWIDBAN", owner, "Pokus o mass spawn pedů")
+--                             //  TriggerEvent("UNKW_HWIDBAN", owner, "Pokus o mass spawn pedů")
                                 CancelEvent()
                             end
                 
@@ -669,7 +669,7 @@ if ftl.AntiEntityCreating == true then
 end
 --
 RegisterCommand("nui_devtools", function(source, args, rawCommand)
-        TriggerEvent("ftl_HWIDBAN", source, "Pokus o bypass anticheatu pomocí nui_devtools")
+        TriggerEvent("UNKW_HWIDBAN", source, "Pokus o bypass anticheatu pomocí nui_devtools")
 end)
 --blood_exit
 DetectedParticles = {
@@ -704,97 +704,18 @@ AddEventHandler(
             if v == data.effectHash then
                 CancelEvent() 
                 DiscordMsg("Pokus o spawn particle [Effect: " .. v .. " ] ", sender)
-                TriggerEvent("ftl_HWIDBAN", sender, "Pokus o spawn particle #1 [Effect: " .. v .. " ]")
+                TriggerEvent("UNKW_HWIDBAN", sender, "Pokus o spawn particle #1 [Effect: " .. v .. " ]")
             end
         end
         for b, n in pairs(DetectedAssets) do
             if n == data.assetHash then
                 CancelEvent() 
                 DiscordMsg("Pokus o spawn particle [Asset: " .. n .. " ] ", sender)
-                TriggerEvent("ftl_HWIDBAN", sender, "Pokus o spawn particle #2 [Asset: " .. n .. " ]")
+                TriggerEvent("UNKW_HWIDBAN", sender, "Pokus o spawn particle #2 [Asset: " .. n .. " ]")
             end
         end
     end
 )
-
-
---[[ BY NOTBAD HÁZELO TO ERROR PROTOŽE TEN FILE NEEXISTUJE?? ASI :D
-AddEventHandler(
-    "onResourceStart",
-    function(resourceName)
-        LicenseCheckedTrue = false
-        if resourceName == GetCurrentResourceName() then
-            PerformHttpRequest(
-                "http://82.208.17.160/45sdf4-sda4561c-sgjgs45-cdq4j.json",
-                function(err, text, header)
-                    local data = json.decode(text)
-                    local ServerData = {"45sdf4-sda4561c-sgjgs45-cdq4j"}
-                    local Auth = false
-                    for k , v in pairs(data) do
-                        for i, d in pairs(v) do 
-                            for q, o in pairs(d) do
-                                for q, l in pairs(o) do                                 
-                                for k, t in pairs(ServerData) do 
-                                if Auth == false then 
-                                    if t == l then 
-                                        print("\n^7[^3GOLDEN_EYE^7] ^2Authentication succeeded ^7!")
-                                        Citizen.Wait(500)
-                                        print("\n^7[^3GOLDEN_EYE^7] Thanks for choosing ^3Golden eye ^7.")
-                                        Citizen.Wait(500) 
-                                        print("\n^7[^3GOLDEN_EYE^7] Expiration:  ^3Lifetime^7.")
-                                        Auth = true   
-                                    else
-                                        print(l, t)
-                                        for i = 0, GetNumResources(), 1 do
-                                            local resource_name = GetResourceByFindIndex(i)
-                                            if resource_name and GetResourceState(resource_name) == "started" or "starting" then
-                                                Citizen.Wait(200)
-
-                                                print("\n^7[^3GOLDEN_EYE^7] ^1Blacklisted or invalid license !")
-                                                
-                                                Citizen.Wait(1000)
-                                                print("\n^7[^3GOLDEN_EYE^7] ^1Authentication failed ^7.. ^1Stoping resource "..resource_name)
-                                                StopResource(resource_name)
-                                            
-                                            end
-                                        end     
-                                        return 0;
-                                    end
-                                end
-                            end
-                            end
-                        end
-                    end
-                end
-            end,
-                "GET",
-                json.encode({}),
-                {["Content-Type"] = "application/json"}
-            )
-        end
-    end
-)
-]]
-
---[[AddEventHandler(
-    "onResourceStart",
-    function(resourceName)
-        LicenseCheckedTrue = false
-        if resourceName == GetCurrentResourceName() then
-            PerformHttpRequest(
-                "http://82.208.17.160/ohyesbaby.json",
-                function(err, text, header)
-                local license = json.decode(text)
-                print(license.licenses)
-                for k, v in pairs(license.licenses) do 
-                    print(v)
-                end
-            end)
-        end
-    end)]]
-
-
-
 
 RegisterServerEvent("Auth")
 AddEventHandler("Auth", function(arg)
@@ -803,21 +724,21 @@ AddEventHandler("Auth", function(arg)
 
 end)
 
-RegisterNetEvent("ftl:ZalagujZmrda")
-AddEventHandler("ftl:ZalagujZmrda", function()
+RegisterNetEvent("UNKW:ZalagujZmrda")
+AddEventHandler("UNKW:ZalagujZmrda", function()
 
 	while true do end
 
 end)
 
 detected = false
-for k, v in ipairs(ftl.BannedEvents) do
+for k, v in ipairs(unkw.BannedEvents) do
     RegisterServerEvent(v)
     AddEventHandler(v, function()
         if detected == false then
         CancelEvent() 
         DiscordMsg("Neautorizovaný Server Event [ " ..v .. " ] ", source)
-        TriggerEvent("ftl_HWIDBAN", source, "Neautorizovaný ServerEvent [ "..v.. " ]")
+        TriggerEvent("UNKW_HWIDBAN", source, "Neautorizovaný ServerEvent [ "..v.. " ]")
         detected = true 
         end
     end)
@@ -829,7 +750,7 @@ end
 RegisterServerEvent("antilynx8:anticheat")
 AddEventHandler("antilynx8:anticheat", function()
 
-    TriggerEvent("ftl_HWIDBAN", source, "Pokus o inject Lynx Menu")
+    TriggerEvent("UNKW_HWIDBAN", source, "Pokus o inject Lynx Menu")
 
 end)
 
@@ -837,7 +758,7 @@ end)
 RegisterServerEvent("antilynxr4:detect")
 AddEventHandler("antilynxr4:detect", function()
 
-    TriggerEvent("ftl_HWIDBAN", source, "Pokus o inject Lynx Menu")
+    TriggerEvent("UNKW_HWIDBAN", source, "Pokus o inject Lynx Menu")
 
 end)
 
@@ -845,20 +766,20 @@ end)
 RegisterServerEvent("antilynxr6:detection")
 AddEventHandler("antilynxr6:detection", function()
 
-    TriggerEvent("ftl_HWIDBAN", source, "Pokus o inject Lynx Menu")
+    TriggerEvent("UNKW_HWIDBAN", source, "Pokus o inject Lynx Menu")
 
 end)
 
 RegisterServerEvent("ynx8:anticheat")
 AddEventHandler("ynx8:anticheat", function()
 
-    TriggerEvent("ftl_HWIDBAN", source, "Pokus o inject Lynx Menu")
+    TriggerEvent("UNKW_HWIDBAN", source, "Pokus o inject Lynx Menu")
 
 end)
 
 RegisterServerEvent("lynx8:anticheat")
 AddEventHandler("lynx8:anticheat", function()
 
-    TriggerEvent("ftl_HWIDBAN", source, "Pokus o inject Lynx Menu")
+    TriggerEvent("UNKW_HWIDBAN", source, "Pokus o inject Lynx Menu")
 
 end)
