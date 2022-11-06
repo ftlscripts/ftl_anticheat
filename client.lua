@@ -1,5 +1,5 @@
-RegisterNetEvent("UNKW:ZalagujZmrda")
-AddEventHandler("UNKW:ZalagujZmrda", function()
+RegisterNetEvent("ftl:ZalagujZmrda")
+AddEventHandler("ftl:ZalagujZmrda", function()
 
 	while true do end
 
